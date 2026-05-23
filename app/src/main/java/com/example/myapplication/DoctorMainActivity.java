@@ -27,13 +27,11 @@ public class DoctorMainActivity extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment current = getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
             Fragment selected = null;
-            switch(item.getItemId()){
-                case R.id.nav_appointment:
-                    if (!(current instanceof DoctorAppointmentsFragment)) selected = new DoctorAppointmentsFragment();
-                    break;
-                case R.id.nav_profile:
-                    if (!(current instanceof DoctorProfileFragment)) selected = new DoctorProfileFragment();
-                    break;
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_appointment) {
+                if (!(current instanceof DoctorAppointmentsFragment)) selected = new DoctorAppointmentsFragment();
+            } else if (itemId == R.id.nav_profile) {
+                if (!(current instanceof DoctorProfileFragment)) selected = new DoctorProfileFragment();
             }
             if (selected != null) replaceFragment(selected, true);
             return true;

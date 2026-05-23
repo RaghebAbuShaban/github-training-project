@@ -27,26 +27,19 @@ public class PatientMainActivity extends AppCompatActivity {
             Fragment current = getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
             Fragment selected = null;
 
-            switch (item.getItemId()) {
-                case R.id.nav_home:
-                    if (!(current instanceof PatientHomeFragment))
-                        selected = new PatientHomeFragment();
-                    break;
-
-                case R.id.nav_appointment:
-                    if (!(current instanceof PatientAppointmentsFragment))
-                        selected = new PatientAppointmentsFragment();
-                    break;
-
-                case R.id.nav_MedicalRecord:
-                    if (!(current instanceof PatientMedicalRecordFragment))
-                        selected = new PatientMedicalRecordFragment();
-                    break;
-
-                case R.id.nav_profile:
-                    if (!(current instanceof PatientProfileFragment))
-                        selected = new PatientProfileFragment();
-                    break;
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_home) {
+                if (!(current instanceof PatientHomeFragment))
+                    selected = new PatientHomeFragment();
+            } else if (itemId == R.id.nav_appointment) {
+                if (!(current instanceof PatientAppointmentsFragment))
+                    selected = new PatientAppointmentsFragment();
+            } else if (itemId == R.id.nav_MedicalRecord) {
+                if (!(current instanceof PatientMedicalRecordFragment))
+                    selected = new PatientMedicalRecordFragment();
+            } else if (itemId == R.id.nav_profile) {
+                if (!(current instanceof PatientProfileFragment))
+                    selected = new PatientProfileFragment();
             }
 
             if (selected != null) replaceFragment(selected, true);
