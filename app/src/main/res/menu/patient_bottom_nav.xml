@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/home_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+    <item
+        android:id="@+id/nav_appointment"
+        android:title="Appointment"
+        android:icon="@drawable/calendar_add_on_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+    <item
+        android:id="@+id/nav_MedicalRecord"
+        android:title="MedicalRecord"
+        android:icon="@drawable/orders_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/person_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+</menu>
